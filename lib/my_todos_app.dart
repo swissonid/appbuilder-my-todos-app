@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'my_todos_page.dart';
+
+final _myTodosTheme = ThemeData(
+  useMaterial3: true,
+  scaffoldBackgroundColor: Colors.white,
+  appBarTheme: const AppBarTheme(
+    backgroundColor: Colors.white,
+    foregroundColor: Colors.black,
+    centerTitle: false,
+    elevation: 0,
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: Colors.white,
+      systemNavigationBarColor: Colors.red,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  ),
+  primarySwatch: Colors.red,
+  primaryIconTheme: const IconThemeData(color: Colors.white),
+);
+
+class MyTodosApp extends StatelessWidget {
+  const MyTodosApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.red,
+      ),
+    );
+    return MaterialApp(
+      title: 'My Todos',
+      theme: _myTodosTheme,
+      home: const MyTodosPage(),
+    );
+  }
+}

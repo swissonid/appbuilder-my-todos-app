@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Pixel 4a 5G",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "08271JECB05276"
+        },
+        {
+            "name": "iPhone 13 mini",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "9814A4A8-A5CE-48F3-A751-ABF683650F0D"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "iOS 13 and Pixel 6",
+            "configurations": [
+                "Pixel 6","iPhone 13 mini"
+            ]
+        }
+    ]
+}
