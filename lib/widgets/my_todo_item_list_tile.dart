@@ -65,7 +65,7 @@ class _MyTodoItemListTileState extends State<MyTodoItemListTile> {
                     subTitle: widget.subTitle,
                   ),
                 ),
-                const Icon(Icons.menu),
+                // const Icon(Icons.menu),
                 const SizedBox(
                   width: 16,
                 )

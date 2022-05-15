@@ -32,12 +32,17 @@ class _MyTodosPageState extends State<MyTodosPage> {
   }
 
   void _move(int fromIndex, int toIndex) {
-    print('List size: ${_todoList.length} move from: $fromIndex to $toIndex');
     if (fromIndex < toIndex) {
       toIndex -= 1;
     }
     setState(() {
       _todoList.move(fromIndex, toIndex);
+    });
+  }
+
+  void _remove(int index) {
+    setState(() {
+      _todoList.removeAt(index);
     });
   }
 
@@ -67,6 +72,7 @@ class _MyTodosPageState extends State<MyTodosPage> {
       body: MyTodoListView(
         todoItems: _todoList.toList(),
         onTodoItemReorder: _move,
+        onTodoItemRemoved: _remove,
         onTodoItemChanged: _changeItem,
       ),
 
