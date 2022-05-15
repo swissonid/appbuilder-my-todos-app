@@ -31,6 +31,7 @@ class MyTodoListView extends StatelessWidget {
       onReorder: onTodoItemReorder,
       itemCount: todoItems.length,
       padding: EdgeInsets.zero,
+      buildDefaultDragHandles: false,
       itemBuilder: (context, index) {
         final todoItem = todoItems[index];
         final subTitle =
@@ -41,16 +42,30 @@ class MyTodoListView extends StatelessWidget {
             onTodoItemRemoved(index);
           },
           key: ValueKey(todoItem.id),
-          child: MyTodoItemListTile(
-            title: Text(todoItem.title),
-            subTitle: subTitle,
-            isDone: todoItem.isDone,
-            hideTopLine: index == firstItem,
-            hideBottomLine: index != lastItem,
-            onChanged: (isDone) {
-              final updatedTodoItem = todoItem.copyWith(isDone: isDone);
-              onTodoItemChanged(todoItem, updatedTodoItem);
-            },
+          child: SizedBox(
+            height: 56,
+            child: Stack(
+              children: [
+                MyTodoItemListTile(
+                  title: Text(todoItem.title),
+                  subTitle: subTitle,
+                  isDone: todoItem.isDone,
+                  hideTopLine: index == firstItem,
+                  hideBottomLine: index != lastItem,
+                  onChanged: (isDone) {
+                    final updatedTodoItem = todoItem.copyWith(isDone: isDone);
+                    onTodoItemChanged(todoItem, updatedTodoItem);
+                  },
+                ),
+                const Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 16),
+                    child: Icon(Icons.drag_handle),
+                  ),
+                )
+              ],
+            ),
           ),
         );
       },
