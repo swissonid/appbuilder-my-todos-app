@@ -1,6 +1,6 @@
+import 'package:appbuilders_my_todos/core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_todos/widgets/my_widgets.dart';
-import 'package:my_todos_core/core.dart';
 
 typedef OnTodoItemChanged = void Function(TodoItem oldItem, TodoItem newItem);
 typedef OnTodoItemReorder = void Function(int formInxex, int toIndex);

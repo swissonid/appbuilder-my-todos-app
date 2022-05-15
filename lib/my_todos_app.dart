@@ -13,11 +13,11 @@ final _myTodosTheme = ThemeData(
     elevation: 0,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: Colors.white,
-      systemNavigationBarColor: Colors.red,
+      systemNavigationBarColor: Colors.orange,
       statusBarIconBrightness: Brightness.dark,
     ),
   ),
-  primarySwatch: Colors.red,
+  primarySwatch: Colors.orange,
   primaryIconTheme: const IconThemeData(color: Colors.white),
 );
 
@@ -29,11 +29,11 @@ class MyTodosApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.red,
+        systemNavigationBarColor: Colors.orange,
       ),
     );
     return MaterialApp(
-      title: 'My Todos',
+      title: 'My Todos Solution',
       theme: _myTodosTheme,
       home: const MyTodosPage(),
     );

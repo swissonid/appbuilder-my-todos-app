@@ -1,6 +1,6 @@
+import 'package:appbuilders_my_todos/core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_todos/my_new_todo_page.dart';
-import 'package:my_todos_core/core.dart';
 
 import 'widgets/my_widgets.dart';
 
@@ -14,11 +14,11 @@ class MyTodosPage extends StatefulWidget {
 class _MyTodosPageState extends State<MyTodosPage> {
   final _todoList = TodoList();
 
-  void _incrementCounter() {
+  void _incrementTodoItem() {
     setState(() {
       _todoList.save(
         TodoItem(
-          title: 'Todo itme',
+          title: 'Todo item',
           description: 'My index is ${_todoList.length}',
         ),
       );
@@ -62,7 +62,7 @@ class _MyTodosPageState extends State<MyTodosPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Todos'),
+        title: const Text('My Todos solution'),
         automaticallyImplyLeading: false,
         actions: const [
           MyTodosPopupMenu(),
@@ -77,7 +77,7 @@ class _MyTodosPageState extends State<MyTodosPage> {
       ),
 
       bottomNavigationBar: _BottomNavigationBar(
-        onBellPressed: _incrementCounter,
+        onBellPressed: _incrementTodoItem,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(

@@ -1,5 +1,5 @@
+import 'package:appbuilders_my_todos/core.dart';
 import 'package:flutter/material.dart';
-import 'package:my_todos_core/core.dart';
 
 class MyNewTodoPage extends StatefulWidget {
   const MyNewTodoPage({Key? key}) : super(key: key);
